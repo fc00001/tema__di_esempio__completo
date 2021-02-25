@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {{ content_for_header }}
+    {{- 'bootstrap.min.css' | asset_url | stylesheet_tag -}}
+    {{- 'styles.css' | asset_url | stylesheet_tag -}}
+  </head>
+  <body class="bg-faded no-js">
+    {%- section 'header' -%}
+    {{ content_for_layout }}
+    {%- section 'footer' -%}
+    {{- 'jquery-3.1.1.min.js' | asset_url | script_tag -}}
+    {{- 'bootstrap.min.js' | asset_url | script_tag -}}
+    {{- 'theme.js' | asset_url | script_tag -}}
+    {{- captured_js -}}
+  </body>
+</html>
